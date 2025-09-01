@@ -19,6 +19,14 @@ async function bootstrap() {
       'https://promoin.my.id',
     ], // atau 'http://localhost:3000'
     credentials: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    allowedHeaders: [
+      'Origin',
+      'X-Requested-With',
+      'Content-Type',
+      'Accept',
+      'Authorization',
+    ],
   });
 
   app.useGlobalPipes(
