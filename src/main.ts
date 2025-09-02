@@ -11,13 +11,11 @@ async function bootstrap() {
 
   app.use(cookieParser());
 
+  const allowedOrigins = process.env.FRONTEND_URL?.split(',') || [];
+
   // CORS
   app.enableCors({
-    origin: [
-      'localhost:3000',
-      'http://127.0.0.1:3000',
-      'https://promoin.my.id',
-    ], // atau 'http://localhost:3000'
+    origin: allowedOrigins,
     credentials: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: [
